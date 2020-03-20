@@ -5,6 +5,25 @@
     android:background="@drawable/backgroundheader1"
     >
 
-    
+    <ImageView
+        android:id="@+id/logoHeader"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/logodangnhap"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="15dp"
+        />
+    <TextView
+        android:id="@+id/textViewNameNhanVien_Navigation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_below="@id/logoHeader"
+        android:layout_alignStart="@+id/logoHeader"
+
+        />
 
 </RelativeLayout>

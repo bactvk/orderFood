@@ -3,4 +3,6 @@
     <string name="tenDangNhap">Tên đăng nhập *</string>
     <string name="DangNhapRequire">Vui lòng nhập tên đăng nhập</string>
     <string name="PassRequire">Vui lòng nhập mật khẩu</string>
+    <string name="mo">open</string>
+    <string name="dong">close</string>
 </resources>

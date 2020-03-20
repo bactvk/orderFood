@@ -5,6 +5,7 @@
     <group
         android:checkableBehavior="single" >
         <item
+            android:id="@+id/itTrangChu"
             android:title="Trang chủ"
             android:icon="@drawable/trangchu"
             android:checked="true"

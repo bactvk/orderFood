@@ -48,7 +48,9 @@ public class DangNhapActivity extends AppCompatActivity implements View.OnClickL
         boolean check = nhanVienDAO.checkLogin(snameLogin,sPass);
         if(check){
             Toast.makeText(DangNhapActivity.this,"Dang nhap thanh cong",Toast.LENGTH_SHORT).show();
-
+            Intent iTrangChu = new Intent(DangNhapActivity.this,TrangChuActivity.class);
+            iTrangChu.putExtra("tenDN",edtNameDangNhap.getText().toString());
+            startActivity(iTrangChu);
         }
         else Toast.makeText(DangNhapActivity.this,"Dang nhap that bai",Toast.LENGTH_SHORT).show();
     }

@@ -9,16 +9,23 @@
         android:roundIcon="@drawable/logodangnhap"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <activity android:name=".TrangChuActivity"></activity>
         <activity android:name=".DangNhapActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"
-                    android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-                    />
+                <action
+                    android:name="android.intent.action.MAIN"
+                    android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DangKyActivity"></activity>
+        <activity android:name=".DangKyActivity" />
+        <activity android:name=".ThemBanAnActivity"
+            android:theme="@style/PopUpActivity"
+            >
+
+        </activity>
     </application>
 
 </manifest>
