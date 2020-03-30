@@ -35,7 +35,7 @@ public class HienThiBanAnFragment extends Fragment {
     BanAnDAO banAnDAO;
     GridView gvHienThiBanAn;
     List<BanAnDTO> banAnDAOList;
-
+    AdapterHienThiBanAn adapterHienThiBanAn;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -45,10 +45,8 @@ public class HienThiBanAnFragment extends Fragment {
 
         gvHienThiBanAn = (GridView) view.findViewById(R.id.gvHienThiBanAn);
         banAnDAO = new BanAnDAO(getActivity());
-        banAnDAOList = banAnDAO.getListBanAn();
-
-        AdapterHienThiBanAn adapterHienThiBanAn = new AdapterHienThiBanAn(getActivity(),R.layout.custom_layout_hienthibanan,banAnDAOList);
-        gvHienThiBanAn.setAdapter(adapterHienThiBanAn);
+        
+        showListBanAn();
         return view;
 //        return super.onCreateView(inflater, container, savedInstanceState);
     }
@@ -98,15 +96,23 @@ public class HienThiBanAnFragment extends Fragment {
                 String sNameBanAn = edtNameBanAn.getText().toString();
                 if(sNameBanAn.equals("")) Toast.makeText(getActivity(),"Please input name Ban An",Toast.LENGTH_SHORT).show();
                 else{
-                   boolean check = banAnDAO.ThemBanAn(sNameBanAn);
-                   Log.d("check:", String.valueOf(check));
+                    boolean check = banAnDAO.ThemBanAn(sNameBanAn);
+                    Log.d("check:", String.valueOf(check));
                     Toast.makeText(getActivity(),"Them Ban an thanh cong",Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(getActivity(), TrangChuActivity.class));
-                   dialog.dismiss();
+                    showListBanAn();
+                    dialog.dismiss();
                 }
             }
         });
 
         dialog.show();
+    }
+
+    private void showListBanAn(){
+        banAnDAOList = banAnDAO.getListBanAn();
+
+        adapterHienThiBanAn = new AdapterHienThiBanAn(getActivity(),R.layout.custom_layout_hienthibanan,banAnDAOList);
+        gvHienThiBanAn.setAdapter(adapterHienThiBanAn);
+        adapterHienThiBanAn.notifyDataSetChanged();
     }
 }
