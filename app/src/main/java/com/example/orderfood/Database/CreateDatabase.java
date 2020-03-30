@@ -32,7 +32,7 @@ public class CreateDatabase  extends SQLiteOpenHelper {
     public static String TB_LOAIMONAN_TENMONAN = "TENLOAI";
 
     public static String TB_BANAN_MABAN = "MABAN";
-    public static String TB_BANAN_MAMON = "TENBAN";
+    public static String TB_BANAN_TENBAN = "TENBAN";
     public static String TB_BANAN_TINHTRANG = "TINHTRANG";
 
     public static String TB_GOIMON_MAGOIMON = "MAGOIMON";
@@ -67,7 +67,7 @@ public class CreateDatabase  extends SQLiteOpenHelper {
 
         String tbBANAN = "CREATE TABLE IF NOT EXISTS " + TB_BANAN + " ("
                 + TB_BANAN_MABAN + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + TB_BANAN_MAMON + " TEXT, "
+                + TB_BANAN_TENBAN + " TEXT, "
                 + TB_BANAN_TINHTRANG + " TEXT "
                 + ")";
 

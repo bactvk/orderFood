@@ -76,6 +76,7 @@ public class TrangChuActivity extends AppCompatActivity implements NavigationVie
         switch (id){
             case R.id.itTrangChu:
                 showHome();
+                item.setCheckable(true);
                 drawerLayout.closeDrawers();
                 break;
         }

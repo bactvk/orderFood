@@ -5,9 +5,12 @@
     android:background="#ffa"
     >
 
-    <TextView
-        android:id="@+id/textView"
+    <GridView
+        android:id="@+id/gvHienThiBanAn"
+        android:numColumns="3"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="HOME" />
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        />
+
 </LinearLayout>
