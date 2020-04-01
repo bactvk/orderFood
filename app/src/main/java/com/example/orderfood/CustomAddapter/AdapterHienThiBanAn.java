@@ -14,11 +14,12 @@ import com.example.orderfood.R;
 
 import java.util.List;
 
-public class AdapterHienThiBanAn extends BaseAdapter {
+public class AdapterHienThiBanAn extends BaseAdapter implements View.OnClickListener {
 
     Context context;
     int layout;
     List<BanAnDTO> banAnDTOList;
+    ViewHolder viewHolder;
 
     public AdapterHienThiBanAn(Context context, int layout, List<BanAnDTO> banAnDTOList) {
         this.context = context;
@@ -41,14 +42,13 @@ public class AdapterHienThiBanAn extends BaseAdapter {
         return 0;
     }
 
+
     public class ViewHolder{
         ImageView imgBanAn, imgGoiMon , imgThanhToan , imgAnButton;
         TextView txtTenBanAn;
     }
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-
-        ViewHolder viewHolder;
         if(convertView == null){
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
@@ -66,9 +66,49 @@ public class AdapterHienThiBanAn extends BaseAdapter {
             viewHolder = (ViewHolder) convertView.getTag();
         }
 
+        if(banAnDTOList.get(position).isDuocChon()){
+            ShowButton();
+        }else{
+            HideButton();
+        }
         BanAnDTO banAnDTO = banAnDTOList.get(position);
         viewHolder.txtTenBanAn.setText(banAnDTO.getTenBan());
 
+        viewHolder.imgBanAn.setTag(position); // luu vi tri ban an
+
+
+        viewHolder.imgBanAn.setOnClickListener(this);
+        viewHolder.imgGoiMon.setOnClickListener(this);
+        viewHolder.imgThanhToan.setOnClickListener(this);
+
         return convertView;
+    }
+
+
+    @Override
+    public void onClick(View v) {
+        int id = v.getId();
+        viewHolder = (ViewHolder) ((View) v.getParent()).getTag();
+        switch (id){
+            case R.id.imgBanAn:
+
+                ShowButton();
+
+                int vitri = (int) v.getTag();
+                banAnDTOList.get(vitri).setDuocChon(true);
+
+                break;
+        }
+    }
+
+    private void ShowButton(){
+        viewHolder.imgGoiMon.setVisibility(View.VISIBLE);
+        viewHolder.imgThanhToan.setVisibility(View.VISIBLE);
+        viewHolder.imgAnButton.setVisibility(View.VISIBLE);
+    }
+    private void HideButton(){
+        viewHolder.imgGoiMon.setVisibility(View.INVISIBLE);
+        viewHolder.imgThanhToan.setVisibility(View.INVISIBLE);
+        viewHolder.imgAnButton.setVisibility(View.INVISIBLE);
     }
 }

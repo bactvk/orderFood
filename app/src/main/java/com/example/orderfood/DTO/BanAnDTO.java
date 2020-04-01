@@ -3,6 +3,16 @@ package com.example.orderfood.DTO;
 public class BanAnDTO {
     int MaBan;
     String TenBan;
+    boolean DuocChon;
+
+
+    public boolean isDuocChon() {
+        return DuocChon;
+    }
+
+    public void setDuocChon(boolean duocChon) {
+        DuocChon = duocChon;
+    }
 
     public int getMaBan() {
         return MaBan;

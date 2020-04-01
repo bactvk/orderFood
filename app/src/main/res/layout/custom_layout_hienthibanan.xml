@@ -28,7 +28,7 @@
         android:src="@drawable/goimon"
         android:layout_below="@+id/imgBanAn"
         android:layout_margin="5dp"
-
+        android:visibility="invisible"
         />
     <ImageView
         android:id="@+id/imgThanhtoan"
@@ -38,6 +38,7 @@
         android:layout_toRightOf="@id/imgGoimon"
         android:layout_below="@+id/imgBanAn"
         android:layout_margin="5dp"
+        android:visibility="invisible"
         />
     <ImageView
         android:id="@+id/imgAnButton"
@@ -47,6 +48,7 @@
         android:layout_toRightOf="@id/imgThanhtoan"
         android:layout_below="@+id/imgBanAn"
         android:layout_margin="5dp"
+        android:visibility="invisible"
         />
 
 </RelativeLayout>

@@ -9,8 +9,9 @@
         android:roundIcon="@drawable/logodangnhap"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".TrangChuActivity"></activity>
+        <activity android:name=".ThemLoaiThucDonActivity"></activity>
+        <activity android:name=".ThemThucDonActivity" />
+        <activity android:name=".TrangChuActivity" />
         <activity android:name=".DangNhapActivity">
             <intent-filter>
                 <action
@@ -21,15 +22,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".DangKyActivity" />
-        <activity android:name=".ThemBanAnActivity"
-
-            >
-
-
-
-
-
-        </activity>
+        <activity android:name=".ThemBanAnActivity" />
     </application>
 
 </manifest>

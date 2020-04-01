@@ -5,4 +5,5 @@
     <string name="PassRequire">Vui lòng nhập mật khẩu</string>
     <string name="mo">open</string>
     <string name="dong">close</string>
+    <string name="vuilongnhapdata">Vui long nhap vao loai thuc don</string>
 </resources>

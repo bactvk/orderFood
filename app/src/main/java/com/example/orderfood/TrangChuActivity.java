@@ -19,6 +19,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.orderfood.FragmentApp.HienThiBanAnFragment;
+import com.example.orderfood.FragmentApp.HienThiThucDonFragment;
 import com.google.android.material.navigation.NavigationView;
 
 public class TrangChuActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -76,7 +77,13 @@ public class TrangChuActivity extends AppCompatActivity implements NavigationVie
         switch (id){
             case R.id.itTrangChu:
                 showHome();
-                item.setCheckable(true);
+                item.setChecked(true);
+                drawerLayout.closeDrawers();
+                break;
+
+            case R.id.itThucDon:
+                showFoodMenu();
+                item.setChecked(true);
                 drawerLayout.closeDrawers();
                 break;
         }
@@ -88,5 +95,11 @@ public class TrangChuActivity extends AppCompatActivity implements NavigationVie
         HienThiBanAnFragment hienThiBanAnFragment = new HienThiBanAnFragment();
         tranHienThiBanAn.replace(R.id.frContent, hienThiBanAnFragment);
         tranHienThiBanAn.commit();
+    }
+    private void showFoodMenu(){
+        FragmentTransaction tranHienThiThucDon = fragmentManager.beginTransaction();
+        HienThiThucDonFragment hienThiThucDonFragment = new HienThiThucDonFragment();
+        tranHienThiThucDon.replace(R.id.frContent , hienThiThucDonFragment);
+        tranHienThiThucDon.commit();
     }
 }
